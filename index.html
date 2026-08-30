@@ -9,43 +9,59 @@
 </head>
 
 
-<body>
+<body class="grid justify-center mt-20 ">
     
-    <main>
-                <h1>Expense Tracker</h1>
+    <main class="shadow-2xl">
+                <h1 class="bg-blue-400 rounded-t-2xl text-white text-center text-5xl text-bold py-10 ">Expense Tracker</h1>
 
         <section id="main-section" class="secttion-main" >
 
             <form action="">
           
-                <div>
-                    <input type="text" name="title" id="title" placeholder="Expense Name">
+                <div class="grid grid-cols-5 gap-x-4  mx-10 py-8">
+                    <input type="text" name="title" id="title" placeholder="Expense Name" class=" rounded-lg shadow-lg  pl-3 focus:outline-none focus:border-none  py-3 border-none">
                     
                
-                    <input type="number" name="amount" id="amount" placeholder="Amount">
+                    <input type="number" name="amount" id="amount" placeholder="Amount" class="shadow-lg rounded-lg   pl-3 focus:outline-none focus:border-none  py-3 border-none">
                     
-                    <select name="category" id="category">
+                    <select name="category" id="category" class="shadow-lg  rounded-lg  pl-3 focus:outline-none focus:border-none  py-3 border-none">
+                        <option value="">Select Category</option>
                         <option value="food">Food</option>
-                        <option value="food">Utility</option>
-                        <option value="food">Travel</option>
-                        <option value="food"></option>
+                        <option value="utility">Utility</option>
+                        <option value="travel">Travel</option>
+                        <option value="bills">Bills</option>
                     </select>
 
 
-                    <input type="date" name="date" id="date" placeholder="mm/dd/yyyy">
+                    <input type="date" name="date" id="date" placeholder="mm/dd/yyyy" class="shadow-lg rounded-lg   px-3 focus:outline-none focus:border-none  py-3 border-none">
                 
-                    <button>Add Expense</button>
+                    <button class="bg-blue-400 text-white py-2 mx-5 rounded-2xl transition-transform hover:translate-y-1" >Add Expense</button>
 
                 </div>       
             </form>
-
-            <div>
-                <h2>Expense Name</h2>
-                <h2>Amount</h2>
-                <h2>Category</h2>
-                <h2>Date</h2>
-                <h2>Action</h2>
+            <hr>
+            
+            <div id="categoryselector"  class=" bg-blue-200 text-amber-900 px-8 py-6 flex align-center">
+                <label for="search_input" class="text-md mr-4">Filter by Category</label>
+               <select type="text" name="search_category" class="p-1 rounded-md focus:outline-none focus:border-none text-sm" id="search_input" placeholder="Food">
+                    <option value="">Select Category</option>
+                    <option value="all" id="search-all">All</option>
+                    <option value="food" id="search-food" >Food</option>
+                    <option value="utility" id="search-utility" >Utility</option>
+                    <option value="travel" id="search-travel" >Travel</option>
+                    <option value="bills" id="search-bill" >Bills</option>
+                </select>
+            
             </div>
+
+            <div class="grid grid-cols-5 gap-x-12 bg-gray-100 px-16 shadow-2xl py-8 ">
+                <h2 class="font-bold font-sans" >Expense Name</h2>
+                <h2 class="font-bold font-sans" >Amount</h2>
+                <h2 class="font-bold font-sans" >Category</h2>
+                <h2 class="font-bold font-sans" >Date</h2>
+                <h2 class="font-bold font-sans" >Action</h2>
+            </div>
+
 
         </section>
     </main>
