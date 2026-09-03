@@ -12,10 +12,12 @@
 
 <body class="grid justify-center mt-20 ">
     
-    <main class="shadow-2xl">
+    <main class="shadow-2xl  mb-10">
                 <h1 class="bg-blue-400 rounded-t-2xl text-white text-center text-5xl text-bold py-10 ">Expense Tracker</h1>
 
         <section id="main-section" class="secttion-main" >
+            
+            <!-------------- INPUTS---------------->
 
             <form action="">
           
@@ -36,43 +38,46 @@
 
                     <input type="date" name="date" id="date" placeholder="mm/dd/yyyy" class="shadow-lg rounded-lg   px-3 focus:outline-none focus:border-none  py-3 border-none">
                 
-                    <button class="bg-blue-400 text-white py-2 mx-5 rounded-2xl transition-transform hover:translate-y-1" id="add-expense-btn" >Add Expense</button>
+                    <button class="bg-blue-400 text-white py-2 mx-5 rounded-2xl transition-transform hover:translate-y-1" id="add-expense-btn" type="button" >Add Expense</button>
 
                 </div>       
             </form>
             <hr>
             
-            <div id="categoryselector"  class=" bg-blue-200 text-amber-900 px-8 py-6 flex align-center">
-                <label for="search_input" class="text-md mr-4">Filter by Category</label>
-               <select type="text" name="search_category" class="p-1 rounded-md focus:outline-none focus:border-none text-sm" id="search_input" placeholder="Food">
-                    <option value="">Select Category</option>
-                    <option value="all" id="search-all">All</option>
-                    <option value="food" id="search-food" >Food</option>
-                    <option value="utility" id="search-utility" >Utility</option>
-                    <option value="travel" id="search-travel" >Travel</option>
-                    <option value="bills" id="search-bill" >Bills</option>
-                </select>
-            
-            </div>
+            <!-- ------------ SEARCH AREA ---------------->
+            <div class="flex  flex-col md:flex-row  justify-between items-center bg-blue-200 ">
+                        <div id="categoryselector"  class=" bg-blue-200 text-amber-900 px-7 py-5 flex align-center">
+                            <label for="search_input" class="text-md mr-4">Filter by Category</label>
+                        <select type="text" name="search_category" class="p-1 rounded-md focus:outline-none focus:border-none text-sm" id="search_input" >
+                                <option value="">Select Category</option>
+                                <option value="all" id="search-all">All</option>
+                                <option value="food" id="search-food" >Food</option>
+                                <option value="utility" id="search-utility" >Utility</option>
+                                <option value="travel" id="search-travel" >Travel</option>
+                                <option value="bills" id="search-bill" >Bills</option>
+                            </select>
+                        
+                        </div>
 
-            <div class="shadow-2xl-
-            ">
-                <div class="grid grid-cols-6 gap-x-14 gap-y-12 bg-gray-100 px-16 py-8 shadow-2xl">
+                        <div id="total-expense" class="bg-yellow-200 text-amber-900 px-8 py-6 mx-14 flex align-center">
+                            <h2 class="text-md mr-4">Total Expense:</h2>
+                            <span id="total-expense-value" class="font-bold text-lg"></span>
+                        
+                        </div>
+
+            </div>
+                    <!-- ------------ ACTUAL LIST ---------------->
+            <div class="shadow-2xl">
+                <div class="grid grid-cols-5 gap-x-14 gap-y-12 bg-gray-100 px-16 py-8 shadow-2xl">
                     <h2 class="font-bold font-sans" >Expense Name</h2>
                     <h2 class="font-bold font-sans" >Amount</h2>
                     <h2 class="font-bold font-sans" >Category</h2>
                     <h2 class="font-bold font-sans" >Date</h2>
                     <h2 class="font-bold font-sans" >Action</h2>
-                    <h2 class="font-bold font-sans" >Edit/Delete</h2>
+                    
                 </div>
-                <ul >
-                    <li  class="grid grid-cols-6 gap-x-4 gap-y-12 bg-gray-100 pl-16 py-8 ">
-                        <span>Food</span><span>45000</span><span>FOOD</span><span>05/12/2006</span><span>BUY FOOD</span> 
-                        <div><button id="edit-btn"><i class="bi bi-pencil"></i></button> <button id="del-btn"><i class="bi bi-trash"></i></button></div>
-                    </li>
-                    <li  class="grid grid-cols-6 gap-x-14 gap-y-12 bg-gray-100 pl-16 py-8 ">
-                        <span>Food</span><span>45000</span><span>FOOD</span><span>05/12/2006</span><span>BUY FOOD</span> <div><button><i class="bi bi-pencil"></i></button> <button><i class="bi bi-trash"></i></button></div>
-                    </li>
+                <ul id="expense-list" >
+                    
                 </ul>
             </div>
         </section>
